@@ -9,6 +9,13 @@ const prisma = new PrismaClient()
 
 export async function getServerSideProps(){
 	const prayers: Prayer[] = await prisma.prayer.findMany()
+
+	 if (!prayers) {
+			return {
+				notFound: true,
+			}
+		}
+
 	return {
 		props: {
 			initialPrayers: prayers
