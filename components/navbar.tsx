@@ -42,6 +42,7 @@ function Navbar() {
 											x="0px"
 											y="0px"
 											viewBox="-80 -50 700 600"
+											fill="white"
 										>
 											<g>
 												<g>
