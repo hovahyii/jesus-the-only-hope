@@ -1,6 +1,25 @@
 import Head from 'next/head'
+import Navbar from '../components/navbar'
+import PrayerCard from "./../components/PrayerCard"
+import { useState } from 'react';
 
-export default function Home() {
+import { PrismaClient, Prayer, Prisma } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+export async function getServerSideProps(){
+	const prayers: Prayer[] = await prisma.prayer.findMany()
+	return {
+		props: {
+			initialPrayers: prayers
+		}
+	}
+}
+
+
+export default function Home({ initialPrayers }) {
+	  const [prayers, setPrayers] = useState<Prayer[]>(initialPrayers)
+
   return (
 		<div className="flex flex-col items-center  w-screen  overflow-x-hidden	 justify-center relative py-2">
 			<Head>
@@ -16,7 +35,16 @@ export default function Home() {
 					data-x_margin="18"
 					data-y_margin="100"
 				></script>
+
 				<title>Jesus ✝️️ | The Only Hope</title>
+				<meta charSet="UTF-8"></meta>
+				<meta
+					name="description"
+					content="Welcome to Prayer Room. “Pray in the Spirit, on all occasions, with all kinds of prayers and
+					requests...” - Ephesians 6:18"
+				></meta>
+				<meta name="keywords" content="Prayer Room"></meta>
+				<meta name="author" content="Hovah Yii"></meta>
 				<link rel="icon" href="/favicon.ico" />
 				<meta
 					name="viewport"
@@ -37,19 +65,13 @@ export default function Home() {
 					requests...” - Ephesians 6:18
 				</p>
 
-				<div className="flex flex-wrap items-center justify-around lg:max-w-4xl mt-6 max-w-xs ">
-					<a
-						href="https://nextjs.org/docs"
-						className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-500 focus:text-blue-500"
-					>
-						<h3 className="text-lg xl:text-2xl font-bold">
-							Documentation &rarr;
-						</h3>
-						<p className="mt-4 xl:text-xl text-sm">
-							Find in-depth information about Next.js features and API.
-						</p>
-					</a>
-				</div>
+					<div className="-mx-3 md:flex items-start w-full mt-6 ">
+						{prayers.map((c, i: number) => (
+							<div className="px-3 md:w-1/3" key={i}>
+								<PrayerCard prayer={c} />
+							</div>
+						))}
+					</div>
 			</main>
 
 			{/* <footer className="flex items-center justify-center w-full  h-24 ">
@@ -63,25 +85,7 @@ export default function Home() {
 					<img src="/logo.png" alt="Jesus Only Hope Logo" className="h-6 ml-2" />
 				</a>
 			</footer> */}
-			<nav className="fixed bottom-0  border bg-white flex">
-				<div className="bottom-appbar">
-					<div className="tabs">
-						<div className="tab  tab--left">
-							📖
-							<span>Devotion</span>
-						</div>
-						<div className="tab tab--fab">
-							<div className="top">
-								<div className="fab">🙏</div>
-							</div>
-						</div>
-						<div className="tab tab--right">
-							📝
-							<span>Blog</span>
-						</div>
-					</div>
-				</div>
-			</nav>
+			<Navbar />
 		</div>
 	)
 }
