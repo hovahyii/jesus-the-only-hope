@@ -18,7 +18,7 @@ export async function getServerSideProps(){
 
 
 export default function Home({ initialPrayers }) {
-	  const [prayers, setPrayers] = useState<Prayer[]>(initialPrayers)
+const [prayers, setPrayers] = useState<Prayer[]>(initialPrayers)
 
   return (
 		<div className="flex flex-col items-center  w-screen  overflow-x-hidden	 justify-center relative py-2">

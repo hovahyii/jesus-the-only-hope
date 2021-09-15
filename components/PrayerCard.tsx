@@ -1,8 +1,7 @@
-import {Prayer} from "@prisma/client"
-import Image from "next/image"
+import { Prayer } from "@prisma/client"
 
 interface PrayerCardProps {
-	prayer: prayer
+	prayer: Prayer
 }
 
 export default function PrayerCard(props: PrayerCardProps) {
