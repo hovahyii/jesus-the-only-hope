@@ -1,25 +1,44 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "postinstall": "prisma generate"
-  },
-  "dependencies": {
-    "@prisma/client": "^3.0.2",
-    "@types/node": "^16.7.13",
-    "@types/react": "^17.0.20",
-    "next": "latest",
-    "prisma": "^3.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.40.1",
-    "typescript": "^4.4.2"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
-  }
+	"name": "prisma-next",
+	"description": "Static site with Next.js 9.3 and Prisma.",
+	"version": "0.0.0",
+	"author": {
+		"name": "Hovah Yii",
+		"email": "hovahyii@gmail.com",
+		"url": "https://jesus-the-only-hope.vercel.app/"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hovahyii/jesus-the-only-hope"
+	},
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"db": "prisma studio --experimental",
+		"db-save": "prisma migrate save --experimental",
+		"db-up": "prisma migrate up --experimental",
+		"generate": "prisma generate"
+	},
+	"dependencies": {
+		"@prisma/client": "^3.0.2",
+		"@types/node": "^16.7.13",
+		"@types/react": "^17.0.20",
+		"next": "latest",
+		"prisma": "^3.0.2",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"sass": "^1.40.1",
+		"typescript": "^4.4.2"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.2.6",
+		"postcss": "^8.3.5",
+		"tailwindcss": "^2.2.4"
+	}
 }
