@@ -22,9 +22,9 @@ export default function PrayerCard(props: PrayerCardProps) {
 				<div className="overflow-hidden object-cover rounded-full mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
 					<img
 						className="object-cover"
-						onError={imageOnErrorHandler}
 						src={props.prayer.avatar}
 						alt="avatar"
+						onError={imageOnErrorHandler}
 					/>
 				</div>
 				<div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
@@ -32,7 +32,11 @@ export default function PrayerCard(props: PrayerCardProps) {
 						{props.prayer.name}
 					</h6>
 					<div className="mt-2">
-						<p className="text-sm text-gray-500">{props.prayer.description}</p>
+						<p className="text-sm text-gray-500">
+						
+							 {props.prayer.description}{" "}
+						
+						</p>
 					</div>
 				</div>
 			</div>

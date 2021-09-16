@@ -39,7 +39,7 @@ export default function AddPrayerForm(props: AddPrayerFormProps) {
 				<InputSpacer>
 					<input
 						className="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-						placeholder="Your Avatar"
+						placeholder="Any image link you like"
 						name="avatar"
 						{...register("avatar", {
 							required: "Required",

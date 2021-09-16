@@ -37,6 +37,7 @@ function Navbar() {
 								<div className="top">
 									<div className="fab">
 										<svg
+											className="stroke-1"
 											version="1.1"
 											id="Layer_1"
 											x="0px"

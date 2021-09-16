@@ -17,10 +17,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"db": "prisma studio --experimental",
-		"db-save": "prisma migrate save --experimental",
-		"db-up": "prisma migrate up --experimental",
-		"generate": "prisma generate"
+		"vercel-build": "prisma generate && prisma migrate deploy && next build",
+		"prisma:generate": "prisma generate"
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.4.1",
