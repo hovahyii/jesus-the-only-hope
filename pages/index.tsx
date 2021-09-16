@@ -50,7 +50,18 @@ const cancelButtonRef = useRef(null)
   return (
 		<div className="flex flex-col items-center  w-screen h-full  overflow-x-hidden justify-center relative py-2">
 			<Head>
-		
+				{/* <script
+					data-name="BMC-Widget"
+					data-cfasync="false"
+					src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+					data-id="hovahyii"
+					data-description="Support me on Buy me a coffee!"
+					data-message="If you like this website, buy me a coffee"
+					data-color="#FFDD00"
+					data-position="Right"
+					data-x_margin="18"
+					data-y_margin="180"
+				></script> */}
 
 				<title>Jesus ✝️️ | The Only Hope</title>
 				<meta charSet="UTF-8"></meta>
