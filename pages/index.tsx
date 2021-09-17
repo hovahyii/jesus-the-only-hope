@@ -81,7 +81,7 @@ const cancelButtonRef = useRef(null)
 			<main className="flex flex-col items-center justify-center w-full flex-1 px-10 text-center pb-20">
 				<h1 className=" text-4xl xl:text-6xl font-bold">
 					Welcome to{" "}
-					<a className="text-blue-400" href="https://nextjs.org">
+					<a className="text-blue-400" href="https://jesus-the-only-hope.herokuapp.com/">
 						Prayer Room
 					</a>
 				</h1>
