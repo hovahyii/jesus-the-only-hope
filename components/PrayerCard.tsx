@@ -17,7 +17,7 @@ export default function PrayerCard(props: PrayerCardProps) {
 		event.currentTarget.className = "error"
 	}
 	return (
-		<div className="border border-gray-20 mx-auto rounded-lg bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+		<div className="border-2 shadow-md  border-gray-200 mx-auto rounded-lg  px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 			<div className="sm:flex sm:items-start">
 				<div className="overflow-hidden object-cover rounded-full mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
 					<img
@@ -32,11 +32,7 @@ export default function PrayerCard(props: PrayerCardProps) {
 						{props.prayer.name}
 					</h6>
 					<div className="mt-2">
-						<p className="text-sm text-gray-500">
-						
-							 {props.prayer.description}{" "}
-						
-						</p>
+						<p className="text-sm text-gray-500">{props.prayer.description} </p>
 					</div>
 				</div>
 			</div>
