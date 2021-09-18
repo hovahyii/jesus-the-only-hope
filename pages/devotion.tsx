@@ -152,14 +152,7 @@ export default function devotion() {
 											马来西亚卫理公会对同性婚姻的立场
 										</a>
 									</li>
-									<li>
-										<a
-											href="https://www.bbc.com/zhongwen/simp/chinese-news-38400762"
-											target="_blank"
-										>
-											专访：支持同性婚姻合法化违背《圣经》？牧师怎么说
-										</a>
-									</li>
+								
 								</ol>
 							</p>
 						</div>
