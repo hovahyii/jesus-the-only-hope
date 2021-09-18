@@ -16,3 +16,9 @@ model Prayer {
   name String
   description String
 }
+
+model Tweet {
+  id String @id @default(cuid())
+  body String 
+  createdAt DateTime @default(now())
+}

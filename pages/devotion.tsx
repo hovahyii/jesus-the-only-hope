@@ -1,7 +1,44 @@
 import Navbar from "../components/navbar"
 import Head from "next/head"
+import TweetForm from "../components/TweetForm"
+import TimelineTweet from "../components/TimelineTweet"
+import styles from "./index.module.scss"
 
-export default function devotion() {
+import {PrismaClient} from "@prisma/client"
+
+const prisma = new PrismaClient()
+
+export async function getServerSideProps() {
+	const tweets = await prisma.tweet.findMany({orderBy: {createdAt: "desc"}})
+
+	return {
+		props: {
+			tweets: tweets.map((data) => ({
+				...data,
+				createdAt: data.createdAt.getTime(),
+			})),
+		},
+	}
+}
+
+const saveTweet = async (data) => {
+	await fetch("/api/tweet", {
+		method: "POST",
+		body: JSON.stringify(data),
+	})
+}
+
+export default function devotion({ tweets }) {
+
+	  const onSubmit = async (data) => {
+			try {
+				await saveTweet(data)
+				window.location.reload()
+			} catch (err) {
+				console.log(err)
+			}
+		}
+
 	return (
 		<>
 			<Head>
@@ -21,7 +58,7 @@ export default function devotion() {
 			</Head>
 			<div className="flex h-screen">
 				<div className="m-auto">
-					<main className="mb-20">
+					<main className="mb-10">
 						<div className="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative h-96	">
 							<div className="absolute left-0 bottom-0 w-full h-full z-10 bg-linear-gradient	"></div>
 							<img
@@ -152,13 +189,25 @@ export default function devotion() {
 											马来西亚卫理公会对同性婚姻的立场
 										</a>
 									</li>
-								
 								</ol>
 							</p>
 						</div>
 					</main>
+
+					<div className="mb-28">
+						<div className=" max-w-screen m-auto border-2">
+							<div className=" text-2xl font-bold justify-between	items-center  border-b-2 flex flex-row	">
+								<div className="leading-7	 m-4 ">✍🏻 分享 + 得着 + 亮光🌟</div>
+							</div>
+							<TweetForm onSubmit={onSubmit} />
+							{tweets.map((data) => (
+								<TimelineTweet key={data.id} {...data} />
+							))}
+						</div>
+					</div>
 				</div>
 			</div>
+
 			<Navbar />
 		</>
 	)
