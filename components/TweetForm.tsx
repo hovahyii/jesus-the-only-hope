@@ -15,7 +15,7 @@ export default function TweetForm({onSubmit}) {
 			</div>
 			<div className={styles.rightColumn}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<input
+					<textarea
 					
 						{...register("body", {required: true})}
 						placeholder="What's happening?"
