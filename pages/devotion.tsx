@@ -1,8 +1,24 @@
 import Navbar from "../components/navbar"
+import Head from "next/head"
 
 export default function devotion() {
 	return (
 		<>
+			<Head>
+				<title>你们中间谁是没有罪的，他就可以先拿起石头打她</title>
+				<meta charSet="UTF-8"></meta>
+				<meta
+					name="description"
+					content="同性恋课题在近几年火了起来，主要是同性恋合法化成了趋势。根据 USA today ，如今已有多达 29个欧美国家承认同性婚姻。即 《 基督邮报 》报道，英国卫理公会 (Methodist Church) 通过决议，批准为同性结合提供祝福并承认同居伴侣。这起事件也间接导致教会因同性课题造成分裂。根据《 卫理报 》脸书贴文，"
+				></meta>
+				<meta name="keywords" content="反思"></meta>
+				<meta name="author" content="Hovah Yii"></meta>
+				<link rel="icon" href="/favicon.ico" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				></meta>
+			</Head>
 			<div className="flex h-screen">
 				<div className="m-auto">
 					<main className="mb-20">
@@ -47,7 +63,7 @@ export default function devotion() {
 									href="https://www.usatoday.com/story/money/2019/06/13/countries-where-same-sex-marriage-is-officially-legal/39514623/"
 									target="_blank"
 								>
-									USA today
+									USA TODAY
 								</a>{" "}
 								，如今已有多达 29个欧美国家承认同性婚姻。即 《{" "}
 								<a
@@ -57,8 +73,8 @@ export default function devotion() {
 								>
 									基督邮报
 								</a>{" "}
-								》报道，英国卫理公会 (Methodist
-								Church) 通过决议，批准为同性结合提供祝福并承认同居伴侣。这起事件也间接导致教会因同性课题造成分裂。根据《{" "}
+								》报道，英国卫理公会 (Methodist Church)
+								通过决议，批准为同性结合提供祝福并承认同居伴侣。这起事件也间接导致教会因同性课题造成分裂。根据《{" "}
 								<a
 									className="underline"
 									href="https://www.facebook.com/weiLiBao/photos/%E5%9B%A0%E5%90%8C%E6%80%A7%E8%AF%BE%E9%A2%98%E9%80%A0%E6%88%90%E5%88%86%E8%A3%82%E7%BE%8E%E5%9B%BD%E6%AC%B2%E6%88%90%E7%AB%8B%E6%96%B0%E5%AE%97%E6%B4%BE%E5%85%A8%E7%90%83%E5%8D%AB%E7%90%86%E5%85%AC%E4%BC%9A-%E8%99%BD%E7%84%B62020%E5%B9%B41%E6%9C%883%E6%97%A5%E7%BE%8E%E5%9B%BD%E8%81%94%E5%90%88%E5%8D%AB%E7%90%86%E5%85%AC%E4%BC%9A%E6%8F%90%E8%AE%AE%E5%9B%A0%E5%90%8C%E6%80%A7%E8%AF%BE%E9%A2%98%E9%80%A0%E6%88%90%E5%88%86%E8%A3%82%E8%AE%A1%E5%88%92%E4%B8%8D%E8%BF%87%E7%94%B1%E4%BA%8E%E6%96%B0%E5%86%A0%E7%96%AB%E6%83%85%E7%9A%84%E7%88%86%E5%8F%91%E6%80%BB%E8%AE%AE%E4%BC%9A%E8%A2%AB%E6%8B%96%E5%BB%B6%E8%87%B32022%E5%B9%B49/4311270035566980/"
