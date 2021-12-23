@@ -12,12 +12,13 @@ import React, {useEffect, useRef, useState} from "react"
 
 export const getServerSideProps = async () => {
 	let today = new Date().toLocaleDateString()
-
+	console.log(today)
 	const res = await fetch(
-		"https://api.experience.odb.org/devotionals/v2?site_id=1&status=publish&country=MY&on=" +
-			today
+		"https://api.experience.odb.org/devotionals/v2?site_id=1&status=publish&country=MY&on=" + today
 	)
 	const data = await res.json()
+
+
 
 	return {
 		props: {devotions: data},
