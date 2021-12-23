@@ -10,7 +10,7 @@ import React, {useEffect, useRef, useState} from "react"
 
 // const prisma = new PrismaClient()
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 	let today = new Date().toLocaleDateString()
 
 	const res = await fetch(
@@ -18,7 +18,6 @@ export const getStaticProps = async () => {
 			today
 	)
 	const data = await res.json()
-
 
 	return {
 		props: {devotions: data},
