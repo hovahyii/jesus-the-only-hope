@@ -5,7 +5,7 @@ export default function blog() {
 	return (
 		<>
 			<Head>
-				<title>你们中间谁是没有罪的，他就可以先拿起石头打她</title>
+				<title>Blog</title>
 				<meta charSet="UTF-8"></meta>
 				<meta
 					name="description"
