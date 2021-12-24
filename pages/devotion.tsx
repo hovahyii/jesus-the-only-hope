@@ -11,14 +11,12 @@ import React, {useEffect, useRef, useState} from "react"
 // const prisma = new PrismaClient()
 
 export const getServerSideProps = async () => {
-	let today = new Date().toLocaleDateString()
+	let today = new Date().toLocaleDateString() 
 	console.log(today)
 	const res = await fetch(
 		"https://api.experience.odb.org/devotionals/v2?site_id=1&status=publish&country=MY&on=" + today
 	)
 	const data = await res.json()
-
-
 
 	return {
 		props: {devotions: data},
@@ -91,7 +89,13 @@ const Devotions = ({ devotions }) => {
 									</h2>
 									<div className="flex mt-3">
 										<img
-											src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZoNl9gN57S_Q6UJL3Oq2gtZQAVyEUszasQfgz7is-LJeU__ubZ3PALGvDeIUpaNFS-C0&usqp=CAU"
+											src={
+												"https://d626yq9e83zk1.cloudfront.net/authors/" +
+												devotion.author_link
+													.replace("https://odb.org/author/", "")
+													.split("/")[0] +
+												".jpg"
+											}
 											className="h-10 w-10 rounded-full mr-2 object-cover"
 										/>
 
